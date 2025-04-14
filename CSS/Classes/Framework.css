@@ -40,6 +40,19 @@
 	text-shadow: none;
 }
 
+.btn-hexcraft {
+	color: var(--alert-button-tc);
+	background-color: var(--alert-hexcraft-bc);
+	text-shadow: none;
+}
+
+.btn-voidbound {
+	color: var(--alert-button-tc);
+	background-color: var(--alert-voidbound-bc);
+	text-shadow: none;
+}
+
+
 .btn-outline {
 	color: black;
 	text-shadow: none;

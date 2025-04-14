@@ -7,12 +7,20 @@
 	--tertiary-bc: #3b96be;
 	--tertiary-tc: #ffffff;
 
-	--primary-button-bc: #057bad;
+	--primary-button-bc: #14c6a3;
 	--primary-button-tc: #ffffff;
 
-	--sucess-button-bc: #06a01a;
+	--sucess-button-bc: #0c2752;
 	--sucess-button-tc: #ffffff;
 
-	--alert-button-bc: #e20c3b;
+	--alert-button-bc: #f3a900;
 	--alert-button-tc: #ffffff;
+
+	--alert-hexcraft-bc: #901ee1;
+	--alert-hexcraft-tc: #ffffff;
+
+	--alert-voidbound-bc: #661a19;
+	--alert-voidbound-tc: #ffffff;
+
+
 }

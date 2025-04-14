@@ -5,6 +5,11 @@
     font-size: 60px !important;
 }
 
+.main-sub-cat h2 {
+    margin: 0;
+    font-size: 30px !important;
+}
+
 .popup {
     position: fixed;
     top: 50%;
