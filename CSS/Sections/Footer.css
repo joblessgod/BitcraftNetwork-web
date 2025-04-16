@@ -48,15 +48,29 @@
 	justify-content: center;
     margin: 20px;
 }
+.footer a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer ul li {
+    margin-bottom: 6px;
+}
 
 .footer-socials img {
+    text-align: right;
 	margin: 5px;
 	padding: 10px;
 	border-radius: 5px;
 }
 
 .discord-social {
-	background-color: #106299;
+	background-color: #5863e7;
 }
 
 .twitter-social {
