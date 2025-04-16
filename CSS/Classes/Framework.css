@@ -63,13 +63,18 @@
 	background-color: black;
 }
 
+.btn-purple {
+	color: var(--secondary-tc);
+	background-color: #545fe8;
+}
+
 .btn:hover {
 	filter: brightness(80%);
 }
 
 .btn-dark:hover {
 	color: black;
-	background-color: transparent;
+	background-color: greenyellow;
 	text-shadow: none;
 }
 
