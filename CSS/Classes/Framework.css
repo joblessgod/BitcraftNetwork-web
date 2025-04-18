@@ -68,6 +68,12 @@
 	background-color: #545fe8;
 }
 
+
+.btn-yellow {
+	color: var(--secondary-tc);
+	background-color: #cec62f;
+}
+
 .btn:hover {
 	filter: brightness(80%);
 }
