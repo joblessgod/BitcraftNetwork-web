@@ -104,3 +104,29 @@ buyItem(
     document.getElementById('buy-item-4'),
     'cart-item-4'
 );
+
+
+// Price logic for each key type
+const keyConfigs = {
+  legendary: {
+      select: "legendary-select",
+      price: "legendary-price",
+      prices: {1: "₹99", 3: "₹249", 5: "₹399"}
+  },
+  mvp: {
+      select: "mvp-select",
+      price: "mvp-price",
+      prices: {1: "₹149", 3: "₹379", 5: "₹599"}
+  },
+  eternal: {
+      select: "eternal-select",
+      price: "eternal-price",
+      prices: {1: "₹199", 3: "₹499", 5: "₹799"}
+  }
+};
+
+Object.values(keyConfigs).forEach(({select, price, prices}) => {
+  document.getElementById(select).addEventListener('change', function () {
+      document.getElementById(price).textContent = prices[this.value];
+  });
+});

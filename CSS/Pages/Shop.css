@@ -68,6 +68,9 @@
     display: block;
 }
 
+
+
+
 @media screen and (max-width: 1000px) {
     .main h1 {
         font-size: 40px !important;
@@ -123,4 +126,5 @@
         width: 40% !important;
     }
 }
+
 
