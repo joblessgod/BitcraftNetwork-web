@@ -8,7 +8,7 @@ function isUserLogged() {
 }
  
 if(isUserLogged()) {
-	window.location.href = "../HTML/Cart.html";
+	window.location.href = "../Cart.html";
 }
  
 const form = document.querySelector("#login-form");
@@ -69,5 +69,5 @@ form.addEventListener("submit", function (event) {
  
 	nickInput.value = "";
 	confirmInput.value = "";
-	window.location.href = "../HTML/Cart.html";
+	window.location.href = "../Cart.html";
 });
