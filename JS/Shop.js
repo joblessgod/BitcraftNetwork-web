@@ -3,13 +3,13 @@
 // =====================
 
 function setupPopup(openBtn, closeBtn, popup, overlay) {
-  openBtn.addEventListener("click", function(event) {
+  openBtn.addEventListener("click", function (event) {
     event.preventDefault();
     popup.classList.add("popup-active");
     overlay.style.display = "block";
   });
 
-  closeBtn.addEventListener("click", function(event) {
+  closeBtn.addEventListener("click", function (event) {
     event.preventDefault();
     popup.classList.remove("popup-active");
     overlay.style.display = "none";
@@ -57,76 +57,65 @@ setupPopup(
 // =====================
 
 function addToCart(item) {
-    const cart = localStorage.getItem('cart');
-    if(cart) {
-        const cartObj = JSON.parse(cart);
-        if(!cartObj.includes(item)) {
-            cartObj.push(item);
-            localStorage.setItem('cart', JSON.stringify(cartObj));
-        }
-    } else {
-        localStorage.setItem('cart', JSON.stringify([item]));
+  const cart = localStorage.getItem("cart");
+  if (cart) {
+    const cartObj = JSON.parse(cart);
+    if (!cartObj.includes(item)) {
+      cartObj.push(item);
+      localStorage.setItem("cart", JSON.stringify(cartObj));
     }
+  } else {
+    localStorage.setItem("cart", JSON.stringify([item]));
+  }
 }
 
 function buyItem(button, item) {
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        addToCart(item);
-        const successPopup = document.getElementById('success-add');
-        successPopup.classList.add('active');
-        setTimeout(() => {
-            successPopup.classList.remove('active');
-        }, 4000);
-    });
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    addToCart(item);
+    const successPopup = document.getElementById("success-add");
+    successPopup.classList.add("active");
+    setTimeout(() => {
+      successPopup.classList.remove("active");
+    }, 4000);
+  });
 }
 
 // BUY FOR ITEM SHOP 1
-buyItem(
-    document.getElementById('buy-item-1'),
-    'cart-item-1'
-);
+buyItem(document.getElementById("buy-item-1"), "cart-item-1");
 
 // BUY FOR ITEM SHOP 2
-buyItem(
-    document.getElementById('buy-item-2'),
-    'cart-item-2'
-);
+buyItem(document.getElementById("buy-item-2"), "cart-item-2");
 
 // BUY FOR ITEM SHOP 3
-buyItem(
-    document.getElementById('buy-item-3'),
-    'cart-item-3'
-);
+buyItem(document.getElementById("buy-item-3"), "cart-item-3");
 
 // BUY FOR ITEM SHOP 4
-buyItem(
-    document.getElementById('buy-item-4'),
-    'cart-item-4'
-);
-
+buyItem(document.getElementById("buy-item-4"), "cart-item-4");
 
 // Price logic for each key type
 const keyConfigs = {
   legendary: {
-      select: "legendary-select",
-      price: "legendary-price",
-      prices: {1: "₹99", 3: "₹249", 5: "₹399"}
+    select: "legendary-select",
+    price: "legendary-price",
+    prices: { 1: "₹99", 3: "₹249", 5: "₹399" },
   },
   mvp: {
-      select: "mvp-select",
-      price: "mvp-price",
-      prices: {1: "₹149", 3: "₹379", 5: "₹599"}
+    select: "mvp-select",
+    price: "mvp-price",
+    prices: { 1: "₹149", 3: "₹379", 5: "₹599" },
   },
   eternal: {
-      select: "eternal-select",
-      price: "eternal-price",
-      prices: {1: "₹199", 3: "₹499", 5: "₹799"}
-  }
+    select: "eternal-select",
+    price: "eternal-price",
+    prices: { 1: "₹199", 3: "₹499", 5: "₹799" },
+  },
 };
 
-Object.values(keyConfigs).forEach(({select, price, prices}) => {
-  document.getElementById(select).addEventListener('change', function () {
-      document.getElementById(price).textContent = prices[this.value];
+Object.values(keyConfigs).forEach(({ select, price, prices }) => {
+  document.getElementById(select).addEventListener("change", function () {
+    document.getElementById(price).textContent = prices[this.value];
   });
 });
+
+
