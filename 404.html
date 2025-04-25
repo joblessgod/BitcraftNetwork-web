@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #4a1f1c;
+            background-image: url('./Images/404.png');
+            font-family: 'Minecraft', sans-serif;
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            height: 100%;
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            text-shadow: 2px 2px #000;
+            color: #FFFFFF;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px #000;
+        }
+
+        .score {
+            color: #FBFF00;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px #000;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .minecraft-btn {
+            background: #5F5F5F;
+            padding: 8px 0;
+            border-top: 2px solid #000;
+            color: white;
+            text-shadow: 2px 2px #000;
+            font-size: 2rem;
+            font-family: 'Minecraft', sans-serif;
+            position: relative;
+            display: block;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 100%;
+            image-rendering: pixelated;
+        }
+
+        .minecraft-btn:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .minecraft-btn:hover {
+            background: #8b8b8b;
+        }
+
+        .minecraft-btn:active {
+            background: #636363;
+        }
+        .w-100{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Page not found!</h1>
+        <p>A creeper exploded the page you were looking for!</p>
+        <p class="score">Score: Error 404</p>
+        <div class="w-100">
+            <button class="minecraft-btn" onclick="history.back()">Go Back</button>
+            <button class="minecraft-btn" onclick="window.location.href = '/'">Home Page</button>
+        </div>
+    </div>
+</body>
+
+</html>
