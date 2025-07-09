@@ -52,6 +52,115 @@ setupPopup(
   overlay4
 );
 
+const popup5 = document.getElementById("benefits-5");
+const overlay5 = document.querySelector(".overlay");
+setupPopup(
+  document.getElementById("open-popup-5"),
+  document.getElementById("close-popup-5"),
+  popup5,
+  overlay5
+);
+
+
+// === CLAIMBLOCKS POPUPS ===
+const claimPopup1 = document.getElementById("benefits-claim-1");
+setupPopup(
+  document.getElementById("open-claim-popup-1"),
+  document.getElementById("close-claim-popup-1"),
+  claimPopup1,
+  overlay
+);
+
+const claimPopup2 = document.getElementById("benefits-claim-2");
+setupPopup(
+  document.getElementById("open-claim-popup-2"),
+  document.getElementById("close-claim-popup-2"),
+  claimPopup2,
+  overlay
+);
+
+const claimPopup3 = document.getElementById("benefits-claim-3");
+setupPopup(
+  document.getElementById("open-claim-popup-3"),
+  document.getElementById("close-claim-popup-3"),
+  claimPopup3,
+  overlay
+);
+
+const claimPopup4 = document.getElementById("benefits-claim-4");
+setupPopup(
+  document.getElementById("open-claim-popup-4"),
+  document.getElementById("close-claim-popup-4"),
+  claimPopup4,
+  overlay
+);
+
+const claimPopup5 = document.getElementById("benefits-claim-5");
+setupPopup(
+  document.getElementById("open-claim-popup-5"),
+  document.getElementById("close-claim-popup-5"),
+  claimPopup5,
+  overlay
+);
+
+const claimPopup6 = document.getElementById("benefits-claim-6");
+setupPopup(
+  document.getElementById("open-claim-popup-6"),
+  document.getElementById("close-claim-popup-6"),
+  claimPopup6,
+  overlay
+);
+
+
+// === COINS POPUPS ===
+
+const coinPopup1 = document.getElementById("benefits-coin-1");
+setupPopup(
+  document.getElementById("open-coin-popup-1"),
+  document.getElementById("close-coin-popup-1"),
+  coinPopup1,
+  overlay
+);
+
+const coinPopup2 = document.getElementById("benefits-coin-2");
+setupPopup(
+  document.getElementById("open-coin-popup-2"),
+  document.getElementById("close-coin-popup-2"),
+  coinPopup2,
+  overlay
+);
+
+const coinPopup3 = document.getElementById("benefits-coin-3");
+setupPopup(
+  document.getElementById("open-coin-popup-3"),
+  document.getElementById("close-coin-popup-3"),
+  coinPopup3,
+  overlay
+);
+
+const coinPopup4 = document.getElementById("benefits-coin-4");
+setupPopup(
+  document.getElementById("open-coin-popup-4"),
+  document.getElementById("close-coin-popup-4"),
+  coinPopup4,
+  overlay
+);
+
+const coinPopup5 = document.getElementById("benefits-coin-5");
+setupPopup(
+  document.getElementById("open-coin-popup-5"),
+  document.getElementById("close-coin-popup-5"),
+  coinPopup5,
+  overlay
+);
+
+const coinPopup6 = document.getElementById("benefits-coin-6");
+setupPopup(
+  document.getElementById("open-coin-popup-6"),
+  document.getElementById("close-coin-popup-6"),
+  coinPopup6,
+  overlay
+);
 // =====================
 //   PURCHASE SYSTEM
 // =====================
@@ -92,6 +201,9 @@ buyItem(document.getElementById("buy-item-3"), "cart-item-3");
 
 // BUY FOR ITEM SHOP 4
 buyItem(document.getElementById("buy-item-4"), "cart-item-4");
+
+
+buyItem(document.getElementById("buy-item-5"), "cart-item-5");
 
 // Price logic for each key type
 const keyConfigs = {
