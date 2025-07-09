@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitcraftNetwork - Links</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        min-height: 100vh;
+        color: white;
+        overflow-x: hidden;
+    }
+    
+    /* Subtle animated background */
+    .bg-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.1;
+    }
+    
+    .pixel-grid {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #4CAF50;
+        animation: pixelFloat 8s ease-in-out infinite;
+    }
+    
+    .pixel-grid:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+    .pixel-grid:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+    .pixel-grid:nth-child(3) { top: 70%; left: 20%; animation-delay: 4s; }
+    .pixel-grid:nth-child(4) { top: 60%; right: 10%; animation-delay: 6s; }
+    
+    @keyframes pixelFloat {
+        0%, 100% { transform: translateY(0px); opacity: 0.1; }
+        50% { transform: translateY(-10px); opacity: 0.3; }
+    }
+    
+    .container {
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+        animation: fadeInDown 0.8s ease-out;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #4CAF50, #66BB6A);
+        border-radius: 20px;
+        margin: 0 auto 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    
+    .avatar:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+    
+    .title {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 8px;
+        letter-spacing: -0.5px;
+    }
+    
+    .subtitle {
+        font-size: 16px;
+        color: #a0a0a0;
+        font-weight: 400;
+    }
+    
+    .links-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
+    
+    .link-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 20px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .link-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: left 0.6s ease;
+    }
+    
+    .link-card:hover::before {
+        left: 100%;
+    }
+    
+    .link-card:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .link-content {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .link-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+    
+    .link-text {
+        flex: 1;
+    }
+    
+    .link-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: white;
+    }
+    
+    .link-description {
+        font-size: 14px;
+        color: #a0a0a0;
+        font-weight: 400;
+    }
+    
+    .link-arrow {
+        font-size: 20px;
+        color: #a0a0a0;
+        transition: transform 0.3s ease;
+    }
+    
+    .link-card:hover .link-arrow {
+        transform: translateX(4px);
+    }
+    
+    /* Themed colors */
+    .server-card .link-icon {
+        background: linear-gradient(135deg, #FF6B35, #FF8E53);
+    }
+    
+    .discord-card .link-icon {
+        background: linear-gradient(135deg, #7289DA, #5865F2);
+    }
+    
+    .website-card .link-icon {
+        background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    }
+    
+    .social-card .link-icon {
+        background: linear-gradient(135deg, #E91E63, #F06292);
+    }
+    
+    .coming-soon {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    
+    .coming-soon:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+    }
+    
+    .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        animation: fadeIn 0.8s ease-out 0.6s both;
+    }
+    
+    .footer-text {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 12px;
+    }
+    
+    .server-stats {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 16px;
+    }
+    
+    .stat {
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #4CAF50;
+        display: block;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+        color: #888;
+        margin-top: 4px;
+    }
+    
+    /* Notification */
+    .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(76, 175, 80, 0.9);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 16px 20px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .notification.show {
+        transform: translateX(0);
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    /* Responsive */
+    @media (max-width: 480px) {
+        .container {
+            padding: 30px 16px;
+        }
+        
+        .title {
+            font-size: 24px;
+        }
+        
+        .link-card {
+            padding: 16px;
+        }
+        
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+        
+        .link-title {
+            font-size: 16px;
+        }
+        
+        .server-stats {
+            gap: 16px;
+        }
+        
+        .notification {
+            right: 16px;
+            left: 16px;
+            transform: translateY(-100%);
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="pixel-grid"></div>
+        <div class="pixel-grid"></div>
+        <div class="pixel-grid"></div>
+        <div class="pixel-grid"></div>
+    </div>
+
+
+<div class="container">
+    <div class="header">
+        <div class="avatar">
+            <img src="https://i.imgur.com/OMqZfgz.png" alt="BitcraftNetwork Logo">
+        </div>
+        <h1 class="title">BitcraftNetwork</h1>
+        <p class="subtitle">Minecraft SMP Community</p>
+    </div>
+    
+    <div class="links-container">
+        <div class="link-card server-card" onclick="copyServerIP()" style="cursor: pointer;">
+            <div class="link-content">
+                <div class="link-icon">🎮</div>
+                <div class="link-text">
+                    <div class="link-title">Join Our Server</div>
+                    <div class="link-description">play.bitcraftnetwork.fun</div>
+                </div>
+                <div class="link-arrow">📋</div>
+            </div>
+        </div>
+        
+        <a href="https://discord.gg/bitcraftnetwork" class="link-card discord-card" target="_blank">
+            <div class="link-content">
+                <div class="link-icon">💬</div>
+                <div class="link-text">
+                    <div class="link-title">Join Discord</div>
+                    <div class="link-description">Connect with our community</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </div>
+        </a>
+        
+        <a href="https://bitcraftnetwork.fun/vote" class="link-card website-card" target="_blank">
+            <div class="link-content">
+                <div class="link-icon">🗳️</div>
+                <div class="link-text">
+                    <div class="link-title">Vote for Us</div>
+                    <div class="link-description">Support our server & get rewards</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </div>
+        </a>
+        
+        <a href="https://bitcraftnetwork.fun" class="link-card website-card" target="_blank">
+            <div class="link-content">
+                <div class="link-icon">🌐</div>
+                <div class="link-text">
+                    <div class="link-title">Visit Website</div>
+                    <div class="link-description">bitcraftnetwork.fun</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </div>
+        </a>
+        
+        <a href="#" class="link-card social-card coming-soon">
+            <div class="link-content">
+                <div class="link-icon">📸</div>
+                <div class="link-text">
+                    <div class="link-title">Instagram</div>
+                    <div class="link-description">Coming Soon...</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p class="footer-text">24/7 Online • Friendly Community • Regular Events</p>
+        <div class="server-stats">
+            <div class="stat">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Members</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Support</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyServerIP() {
+        const serverIP = 'play.bitcraftnetwork.fun';
+        navigator.clipboard.writeText(serverIP).then(() => {
+            showNotification('Server IP copied to clipboard!');
+        }).catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = serverIP;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showNotification('Server IP copied to clipboard!');
+        });
+    }
+    
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => notification.classList.add('show'), 100);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => document.body.removeChild(notification), 300);
+        }, 3000);
+    }
+    
+    // Add subtle parallax effect to background elements
+    document.addEventListener('mousemove', (e) => {
+        const pixels = document.querySelectorAll('.pixel-grid');
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        pixels.forEach((pixel, index) => {
+            const speed = (index + 1) * 0.5;
+            const xOffset = (x - 0.5) * speed;
+            const yOffset = (y - 0.5) * speed;
+            pixel.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+        });
+    });
+</script>
+
+
+</body>
+</html>
