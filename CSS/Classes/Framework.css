@@ -142,3 +142,8 @@
 	background-color: #d4d4dc;
 	box-shadow: 0px 7px 0px #9c9c9c;
 }
+
+.btn-live {
+  color: var(--alert-voidbound-bc);
+  background-color: var(--alert-button-bc);
+}
